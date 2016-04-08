@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Mining #rpg</title>
+</head>
+<body>
+<script   src="jquery.js"></script>
+<script>$( document ).ready(function ($) {
+    var totalExp = 0;
+    var totalUsers = 0;
+    var totalLevel = 0;
+    var totalLoot = 0;
+
+	guilds = JSON.parse('{"LargePen":[10,"n4pstr"],"Hivemind":[40,"n4pstr"],"feb23":[9,"king0fhearts14"],"GodLike":[37,"ahmenrah","GodLike"]}');
+	scores = JSON.parse('{"eyahe":[312,1,""],"signed7":[109,2,""],"incaseanyonecared":[1214.5,5,"GodLike"],"digitallyfree":[10.5,0,""],"Iinventedcaptchas":[4.5,0,""],"Player72":[6,0,""],"fireflyl8ly":[1.5,0,""],"creamofsumyumgai":[30,1,""],"screaming_for_memes":[4.5,0,""],"AtlasTheBot":[144.5,4,""],"Modoger":[42.5,0,""],"AscendtoSokuku":[9,0,""],"Flobernogets":[60,0,""],"TRIVIA_GOD":[4.5,0,""],"_Aurora_":[8.5,1,""],"Symns":[1.5,0,""],"nullx":[1.5,0,""],"what_should_we_eat":[6,0,""],"sexytimegiggles":[1.5,0,""],"Awhtreprenoober":[7.5,0,""],"Moonpenny":[1.5,0,""],"CrossfitVeganVape":[33.5,0,""],"grizzly_wintergreen":[1.5,0,""],"axlc":[4.5,0,""],"a5yrold":[12,0,""],"gentaruman":[28,0,""],"EdHochuli":[1.5,0,""],"mailman105":[80,0,""],"taalmahret":[4,0,""],"HandsOfCobalt":[9,0,""],"Mythblood":[56,0,""],"nweiskirch":[67,0,""],"IAmAWizard_AMA":[24,0,""],"aggravatedTranscript":[2,0,""],"BroboxylicAcid":[43,0,""],"npst0r":[27,0,""],"robin-rpg":[15,0,""],"janksnake":[1,0,""],"anokrs":[1,0,""],"zhiar":[6,0,""],"idontgreed":[1,0,""],"ImSoClassy":[1,0,""],"hastygumdrops":[108,1,""],"vnmxfm":[1,0,""],"notmyhotdog":[2,0,""],"merehypnotist":[6,0,""],"scarredMontana":[6,0,""],"uzi":[2,0,""],"Wesmman1":[2,0,""],"jwb141":[47,0,""],"Genoce":[143,0,""],"GD87":[20,0,""],"IAmNotJoshua":[24,0,""],"PhreakerX":[2,0,""],"Moonbow_spiralot":[2,0,""],"man_of_molybdenum":[5,0,""],"Newvision20":[5,0,""],"stitoss":[1,0,""],"Arclytic":[10,0,""],"Kev-bot":[3,0,""],"PMmeyourBacon":[49,1,""],"I_Suck_For_Jesus":[7,0,""],"TwigSmitty":[6,0,""],"timour77":[12,0,""],"TheOriginalSoni2":[4,0,""],"blobbafett":[1,0,""],"fartbart":[1,0,""],"biehn":[13,0,""],"only_posts_on_robin":[99,1,""],"jimr1603":[1,0,""],"Andorem":[12,1,""],"HerdingMessiah":[1,0,""],"gutanoth":[145,0,"GodLike"],"theunpoet":[1,0,""],"3xtheredcomet":[13,0,""],"Inkompetentia":[1,0,""],"Tomdeaardappel":[1,0,""],"manamal":[1,0,""],"addthrow4way":[1,0,""],"grandpianotheft":[2,0,""],"undefined":[0,1,""],"fzh":[15,0,""],"No30286":[16,1,""],"hiswayout":[1,0,""],"Ninja8259":[39,1,""],"Everything_Is_Koan":[2,0,""],"kingkuya777":[8,0,""],"Batspocky":[12,0,""],"youturnet":[1,0,""],"LennonVC":[1,0,""],"JellyPicks":[1,0,""],"ActiveContingency":[63,0,""],"king0fhearts14":[96,0,"feb23"],"PurpleJay":[1,0,""],"3rdALT":[1,0,""],"TheAusus":[1,0,""],"MonsieurPineapple":[14,1,""],"SaveVMK":[3,0,""],"Anfrone":[1,0,""],"stealthswor":[3,0,""],"iplanckperiodically":[11,0,""],"on247me":[13,1,""],"graeyRaven":[9,0,""],"sunr0ck":[3,0,""],"Muchashca":[1,0,""],"bloopbleepblop":[9,0,""],"Iislsdum":[1,0,""],"itallbreaksdown":[10,0,""],"n4pstr":[1536.25,4,"GodLike"],"LagAttack89":[28,2,""],"VIOLET_MAN":[3,0,""],"googlin":[35,3,""],"sitsthewind":[240,0,"GodLike"],"noahssarcastic":[273,2,"GodLike"],"ahmenrah":[1325,0,"GodLike"],"Redowadoer":[336.25,3,"Hivemind"],"Mer0":[57,2,""],"r00tmasta":[3,1,""],"Linkynet":[228,0,"GodLike"],"IceDusk":[156.25,1,"GodLike"],"key2lite":[13,1,""],"zmunk19":[273,3,"GodLike"],"Albino_Jackets":[18,1,""],"vet_to_fed":[254,0,"GodLike"],"drumz0rz":[3,0,""],"08hotline":[2,0,""],"scoutgeek":[3,0,""],"Arrowhead119":[17,0,""],"dumbyoyo":[4,0,""],"Kyrmana":[173,0,"GodLike"],"Chrailzen":[106,0,""],"Crosssmurf":[15,0,"GodLike"],"ItBeCaleb":[1,0,""],"Zyx750":[115,0,"GodLike"],"fibonuggie":[12,1,""],"pexium128":[4,0,""],"komichi1168":[39,0,""],"Mega-charizard":[2,0,""],"Papa-Walrus":[4,0,""],"kilofox5":[1,0,""],"HandsOfNod":[1,0,""]}');
+
+
+
+    for (var user in scores) {
+        totalExp += scores[user][0];
+        totalUsers++;
+        totalLevel += computeLevel(scores[user][0]);
+        totalLoot += scores[user][1];
+    }
+
+    function computeLevel(xp) {
+        return Math.floor(((Math.sqrt(625 + 100 * xp) - 25) / 50));
+    }
+
+    function computeLevelGuild(xp) {
+        return Math.floor(((Math.sqrt(25 + 20 * xp) - 5) / 10));
+    }
+
+    function computeTopScoresStr(scores, num) {
+        var scoresArray = [];
+        for (var user in scores) {
+            scoresArray.push([user, readXp(user)]);
+        }
+        scoresArray.sort(function (a, b) {
+            return -(a[1] - b[1]);
+        });
+        var buildScores = "<ul><li>";
+        buildScores += scoresArray.map(i => userInfoLvl(i[0])).slice(0, num).join("</li><li>");
+        buildScores += "</li>";
+        return buildScores;
+    }
+    function readLootAmount(user) {
+        if(scores[user] === undefined) {
+            scores[user] = [0,0, ""];
+        }
+        return scores[user][1];
+    }
+
+    function userInfoLvl(user) {
+        //Return xp/lvl.
+        var xp = readXp(user);
+        var level = computeLevel(xp);
+        var nextLevel = level + 1;
+        var levelTarget = (25 * level * (1 + level));
+        var nextLevelTarget = (25 * nextLevel * (1 + nextLevel));
+        var nextLevelPercent = ((xp - levelTarget) * 100) / (nextLevelTarget - levelTarget);
+        var guild = readGuild(user);
+        var guildBadge = "";
+        if (guild.length > 0) {
+            guildBadge = "[" + guild.substring(0, 3) + "]";
+        }
+        nextLevelPercent = Math.round(nextLevelPercent);
+        link = "<a href = \"https://www.reddit.com/user/" + user + "/\">"
+        linkEnd = "</a>"
+        return link + guildBadge + " /u/" + user + " (" + ((xp !== null ? level + 1 : "0") + "/" + nextLevelPercent + "%") + ") Loot:" + readLootAmount(user) + linkEnd;
+    }
+
+    function readGuild(user) {
+        var _user = scores[user];
+        if (_user[2] === undefined) {
+            scores[user][2] = "";
+        }
+        return scores[user][2];
+    }
+
+
+    function readXp(user) {
+        if (scores[user] === undefined) {
+            scores[user] = [0, 0, ""];
+        }
+        return scores[user][0];
+    }
+
+    var totalGuilds = 0;
+    var totalGuildLevel = 0;
+    var totalGuildLoot = 0;
+
+    for (var guild in guilds) {
+        totalGuilds++;
+        totalGuildLevel += computeLevelGuild(guilds[guild][0]);
+        totalGuildLoot += guilds[guild][0];
+    }
+    document.write("<p>total users:" + totalUsers + "</p>");
+    document.write("<p>total exp:" + totalExp + "</p>");
+    document.write("<p>total level:" + totalLevel + "</p>");
+    document.write("<p>total loot:" + totalLoot + "</p>");
+    document.write("<p>total guild loot:" + totalGuildLoot + "</p>");
+    document.write("<p>total guild level:" + totalGuildLevel + "</p>");
+    document.write("<p>total guilds:" + totalGuilds + "</p>");
+    document.write("<h1>HEROES HALL OF FAME</h1>")
+    document.write(computeTopScoresStr(scores, 50));
+
+    document.write("<h1>GUILD HALLS</h1>")
+    var guildsArray = [];
+    for (var guild in guilds) {
+        guildsArray.push([guild, guilds[guild][0]]);
+    }
+    guildsArray.sort(function (a, b) {
+        return -(a[1] - b[1]);
+    });
+
+    function readGuildXp(guild) {
+        if (guilds[guild] === undefined) {
+            return 0;
+        }
+        return guilds[guild][0];
+    }
+
+    function guildInfoLvl(guild) {
+        //Return xp/lvl.
+        var xp = readGuildXp(guild);
+        var level = computeLevelGuild(xp);
+        var nextLevel = level + 1;
+        var levelTarget = (5 * level) * (1 + level);
+        var nextLevelTarget = (5 * nextLevel * (1 + nextLevel));
+        var nextLevelPercent = ((xp - levelTarget) * 100) / (nextLevelTarget - levelTarget);
+        nextLevelPercent = Math.round(nextLevelPercent);
+        return "[" + guild + "(" + ((xp !== null ? level + 1 : "0") + "/" + nextLevelPercent + "%") + ")]";
+    }
+
+    for (var i = 0; i < guildsArray.length; i++) {
+        document.write("<h2>" + guildInfoLvl(guildsArray[i][0]) + "</h2>");
+        var guildUsers = [];
+        for (var user in scores) {
+            if (scores[user][2] === guildsArray[i][0]) {
+                guildUsers.push([user, scores[user]]);
+            }
+        }
+        document.write("<p>Founder:" + guilds[guildsArray[i][0]][1] + "</p>");
+        document.write("<p>Total users:" + guildUsers.length + "</p>");
+        document.write("<ul>")
+        for (var j = 0; j < guildUsers.length; j++) {
+            document.write("<li>/u/" + guildUsers[j][0] + "</li>");
+        }
+        document.write("</ul>");
+    }
+    document.write("<h1>THE GREAT LIST OF USER NAMES...</h1>")
+
+    document.write(computeTopScoresStr(scores, totalUsers));
+});</script>
+</body>
+</html>
