@@ -52,6 +52,12 @@
         buildScores += "</li>";
         return buildScores;
     }
+    function readLootAmount(user) {
+        if(scores[user] === undefined) {
+            scores[user] = [0,0, ""];
+        }
+        return scores[user][1];
+    }
 
     function userInfoLvl(user) {
         //Return xp/lvl.
@@ -67,7 +73,7 @@
             guildBadge = "[" + guild.substring(0, 3) + "]";
         }
         nextLevelPercent = Math.round(nextLevelPercent);
-        return guildBadge + " /u/" + user + " (" + ((xp !== null ? level + 1 : "0") + "/" + nextLevelPercent + "%") + ")";
+        return guildBadge + " /u/" + user + " (" + ((xp !== null ? level + 1 : "0") + "/" + nextLevelPercent + "%") + ") Loot:" + readLootAmount(user);
     }
 
     function readGuild(user) {
