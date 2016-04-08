@@ -73,7 +73,9 @@
             guildBadge = "[" + guild.substring(0, 3) + "]";
         }
         nextLevelPercent = Math.round(nextLevelPercent);
-        return guildBadge + " /u/" + user + " (" + ((xp !== null ? level + 1 : "0") + "/" + nextLevelPercent + "%") + ") Loot:" + readLootAmount(user);
+        link = "<a href = \"https://www.reddit.com/user/" + user + "/\">"
+        linkEnd = "</a>"
+        return link + guildBadge + " /u/" + user + " (" + ((xp !== null ? level + 1 : "0") + "/" + nextLevelPercent + "%") + ") Loot:" + readLootAmount(user) + linkEnd;
     }
 
     function readGuild(user) {
